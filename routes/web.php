@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', Controllers\AboutUsController::class)->name('aboutUs');
+
+Route::get('/cart', Controllers\CartController::class)->name('cart');
+
+Route::get('/catalog', Controllers\CatalogController::class)->name('catalog');
+
+Route::get('/contacts', Controllers\ContactsController::class)->name('contacts');
+
+Route::get('/delivery', Controllers\DeliveryController::class)->name('delivery');
+
+Route::get('/product_card', Controllers\ProductCardController::class)->name('productCard');
+
+Route::get('/products', Controllers\ProductsController::class)->name('products');
