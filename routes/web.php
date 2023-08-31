@@ -27,3 +27,6 @@ Route::get('/delivery', Controllers\DeliveryController::class)->name('delivery')
 Route::get('/product_card', Controllers\ProductCardController::class)->name('productCard');
 
 Route::get('/products', Controllers\ProductsController::class)->name('products');
+
+// Route::get('/', [Controllers\SubscriberController::class, 'SubscribeIndex']);
+Route::post('dataInsert', [Controllers\SubscriberController::class, 'DataInsert']);

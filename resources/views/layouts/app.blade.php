@@ -278,11 +278,23 @@
                                 <h4> Рассылка </h4>
                             </div>
                             <div class="footer-newsletter">
-                                <p class="text">Введите свой email, чтобы раньше всех узнавать о новостях магазина </p>
-                                <form method="post" action="submitemail" class="footer-default__subscrib-form">
-                                    <div class="footer-input-box"> <input type="email" placeholder="Email" name="email"></div>
+
+                                {{-- <br><p class="text">Вы подписаны </p> --}}
+
+                                <p class="text">Введите свой email, чтобы раньше всех узнавать о новостях магазина </p>                                
+
+                                <form action="dataInsert" class="footer-default__subscrib-form" method="post" enctype="multipart/form-data">
+
+                                    @csrf
+
+                                    <div class="footer-input-box"> 
+                                        <input type="text" name="email" placeholder="Email">
+                                    </div>                                    
+
                                     <button class="btn--primary mt-30" type="submit" style="background: #d0af12; float:right;"> Подписаться</button>
+
                                 </form>
+
                             </div>
                         </div>
                     </div>
