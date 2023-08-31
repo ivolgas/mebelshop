@@ -279,7 +279,7 @@
                             </div>
                             <div class="footer-newsletter">
                                 <p class="text">Введите свой email, чтобы раньше всех узнавать о новостях магазина </p>
-                                <form action="#0" class="footer-default__subscrib-form">
+                                <form method="post" action="submitemail" class="footer-default__subscrib-form">
                                     <div class="footer-input-box"> <input type="email" placeholder="Email" name="email"></div>
                                     <button class="btn--primary mt-30" type="submit" style="background: #d0af12; float:right;"> Подписаться</button>
                                 </form>
