@@ -79,9 +79,8 @@
                             <div class="shop-details-top-color-sky-box mt-30">
                                 <h4>Цвет</h4>
                                 <ul class="varients">
-                                    <li> <a href="#0" class="shop-details-top-color-sky-img"
-                                            data-src="assets/images/colors/4829584.jpg"> <img
-                                                src="assets/images/colors/4829584.jpg" alt=""> </a>
+                                    <li> 
+                                        <img class="shop-details-top-color-sky-img" src="assets/images/colors/4829584.jpg" alt="">
                                     </li>
                                 </ul>
                             </div>

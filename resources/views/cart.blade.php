@@ -63,7 +63,9 @@
                 <div class="col-xl-12">
                     <div class="cart-button-box d-flex justify-content-end">
                         <div class="cart-button-box-right wow fadeInUp animated"> 
-                            <button class="btn--primary style2 mt-30" type="submit">Продолжить покупки</button>
+                            <a href="{{ route('catalog') }}">
+                                <button class="btn--primary style2 mt-30" type="submit">Продолжить покупки</button>
+                            </a>
                             <button class="btn--primary style2 mt-30" type="submit">Заказать</button>
                         </div>
                     </div>

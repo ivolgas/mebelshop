@@ -105,7 +105,7 @@
                         <div class="row">
                             <div class="menu-info d-flex justify-content-between align-items-center">
                                 <div class="menubar"> <span></span> <span></span> <span></span> </div> <a
-                                    href="index.html" class="logo"> <img src="assets/images/logo/logo.svg" alt=""> </a>
+                                    href="{{ route('aboutUs') }}" class="logo"> <img src="assets/images/logo/logo.svg" alt=""> </a>
                                 <div class="cart-holder">
                                     <a href="{{ route('cart') }}" class="cart cart-icon position-relative">
                                         <i class="flaticon-shopping-cart"></i>
@@ -117,7 +117,7 @@
                 </div>
             </div>
             <div class="container position-relative d-lg-block d-none">
-                <div class="d-flex align-items-center justify-content-between"> <a href="index.html" class="logo me-2">
+                <div class="d-flex align-items-center justify-content-between"> <a href="{{ route('aboutUs') }}" class="logo me-2">
                         <img src="assets/images/logo/logo.svg" alt=""> </a>
                     <div class="mega-menu-default mega-menu d-lg-block d-none">
                         <div class="container ">
@@ -156,7 +156,7 @@
             <div class="mega-menu-default mega-menu d-lg-block d-none">
                 <div class="container auto-container position-relative">
                     <div class="row">
-                        <div class=" d-flex align-items-center justify-content-between "> <a href="index.html"
+                        <div class=" d-flex align-items-center justify-content-between "> <a href="{{ route('aboutUs') }}"
                                 class="logo"> <img src="assets/images/logo/logo.svg" alt=""> </a>
                             <nav>
                                 <ul class="page-dropdown-menu d-flex align-items-center justify-content-center">
@@ -252,7 +252,7 @@
                     <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 mt-30 wow fadeInUp animated">
                         <div class="footer-default__single-box">
                             <div class="company-info">
-                                <div class="footer-logo"> <a href="index.html"> <img src="assets/images/logo/logo.svg"
+                                <div class="footer-logo"> <a href="{{ route('aboutUs') }}"> <img src="assets/images/logo/logo.svg"
                                             alt=""> </a> </div>
                                 <div class="text1">
                                     <p>Вы также можете найти нас в соцсетях и следить за последними обновлениями нашего

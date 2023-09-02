@@ -17,9 +17,11 @@ class SubscriberController extends Controller
         
         $email = $request->input('email');
 
-        Subscriber::insert(['email' => $email]);
+        $isInsertSuccess = Subscriber::firstOrCreate(
+            ['email' => $email],
+            ['email' => $email]);
 
-        return redirect()->back();
+        return redirect()->back();        
     }
     
 }
