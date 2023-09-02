@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class CatalogController extends Controller
 {
-    public function __invoke()
+    public function catalog()
     {
         return view('catalog');
     }

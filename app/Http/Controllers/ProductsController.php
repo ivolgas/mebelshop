@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class ProductsController extends Controller
 {
-    public function __invoke()
+    public function products()
     {
         return view('products');
     }

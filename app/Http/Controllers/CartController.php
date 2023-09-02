@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class CartController extends Controller
 {
-    public function __invoke()
+    public function cart()
     {
         return view('cart');
     }

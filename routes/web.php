@@ -14,19 +14,21 @@ use App\Http\Controllers;
 |
 */
 
-Route::get('/', Controllers\AboutUsController::class)->name('aboutUs');
+Route::get('/index', [Controllers\IndexAppController::class, 'index'])->name('index');
 
-Route::get('/cart', Controllers\CartController::class)->name('cart');
+Route::get('/', [Controllers\AboutUsController::class, 'aboutUs'])->name('aboutUs');
 
-Route::get('/catalog', Controllers\CatalogController::class)->name('catalog');
+Route::get('/cart', [Controllers\CartController::class, 'cart'])->name('cart');
 
-Route::get('/contacts', Controllers\ContactsController::class)->name('contacts');
+Route::get('/catalog', [Controllers\CatalogController::class, 'catalog'])->name('catalog');
 
-Route::get('/delivery', Controllers\DeliveryController::class)->name('delivery');
+Route::get('/contacts', [Controllers\ContactsController::class, 'contacts'])->name('contacts');
 
-Route::get('/product_card', Controllers\ProductCardController::class)->name('productCard');
+Route::get('/delivery', [Controllers\DeliveryController::class, 'delivery'])->name('delivery');
 
-Route::get('/products', Controllers\ProductsController::class)->name('products');
+Route::get('/product_card', [Controllers\ProductCardController::class, 'productCard'])->name('productCard');
+
+Route::get('/products', [Controllers\ProductsController::class, 'products'])->name('products');
 
 // Route::get('/', [Controllers\SubscriberController::class, 'SubscribeIndex']);
 Route::post('dataInsert', [Controllers\SubscriberController::class, 'DataInsert']);
