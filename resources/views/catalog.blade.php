@@ -27,16 +27,20 @@
                     </div>
 
                     <div class="row justify-content-center">
+                        @foreach ($categories as $category)
 
                         <div class="col-sm-4 mt-30 col-8 text-center ">
                             <div class="categories-one__thumb wow fadeInLeft animated"> <img
                                     src="assets/images/categories/single.png" alt="">
                                 <div class="text">
-                                    <h2><a href="shop-grid.html">Односпальные</a></h2>
+                                    <h2><a href="{{ route('products') }}">{{ $category->name }}</a></h2>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-4 mt-30 col-8 text-center ">
+                            
+                        @endforeach
+                        
+                        {{-- <div class="col-sm-4 mt-30 col-8 text-center ">
                             <div class="categories-one__thumb wow fadeInRight animated"> <img
                                     src="assets/images/categories/half.png" alt="">
                                 <div class="text">
@@ -51,7 +55,7 @@
                                     <h2><a href="shop-grid.html">Двуспальные</a></h2>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>

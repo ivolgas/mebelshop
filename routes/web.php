@@ -26,9 +26,9 @@ Route::get('/contacts', [Controllers\ContactsController::class, 'contacts'])->na
 
 Route::get('/delivery', [Controllers\DeliveryController::class, 'delivery'])->name('delivery');
 
-Route::get('/product_card', [Controllers\ProductCardController::class, 'productCard'])->name('productCard');
-
 Route::get('/products', [Controllers\ProductsController::class, 'products'])->name('products');
+
+Route::get('/product_card', [Controllers\ProductCardController::class, 'productCard'])->name('productCard');
 
 // Route::get('/', [Controllers\SubscriberController::class, 'SubscribeIndex']);
 Route::post('dataInsert', [Controllers\SubscriberController::class, 'DataInsert']);

@@ -7,8 +7,9 @@ use Illuminate\Http\Request;
 
 class ProductCardController extends Controller
 {
-    public function productCard()
+    public function productCard($productCard)
     {
-        return view('productCard');
+        //dd($productCard);
+        return view('productCard', compact('productCard'));
     }
 }
