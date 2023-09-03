@@ -27,7 +27,10 @@
                                 <div class="tab-pane fade show active" id="pills-grid" role="tabpanel"
                                     aria-labelledby="pills-grid-tab">
                                     <div class="row">
-                                        <div class="col-xl-4 col-lg-6 col-6 ">
+
+                                        @foreach ($products as $product)
+
+                                            <div class="col-xl-4 col-lg-6 col-6 ">
                                             <div class="products-three-single w-100  mt-30">
                                                 <div class="products-three-single-img"> <a
                                                         href="shop-details-3.html" class="d-block"> <img
@@ -36,19 +39,21 @@
                                                             src="assets/images/products/modena1.png" alt=""
                                                             class="hover-img" />
                                                     </a>
-                                                    <a href="cart.html" class="addcart btn--primary style2"> Перейти
+                                                    <a href="{{ route('productCard') }}" class="addcart btn--primary style2"> Перейти
                                                         к товару </a>
                                                 </div>
 
                                                 <div class="products-three-single-content text-center">
                                                     <span>Кровать односпальная</span>
-                                                    <h5><a href="shop-details-3.html"> Модена </a></h5>
-                                                    <p>от 890 BYN</p>
+                                                    <h5><a href="shop-details-3.html"> {{ $product->name }} </a></h5>
+                                                    <p>от {{ $product->price }} BYN</p>
                                                 </div>
                                             </div>
                                         </div>
 
-                                        <div class="col-xl-4 col-lg-6 col-6 ">
+                                        @endforeach                                        
+                                        
+                                        {{-- <div class="col-xl-4 col-lg-6 col-6 ">
                                             <div class="products-three-single w-100  mt-30">
                                                 <div class="products-three-single-img"> <a
                                                         href="shop-details-3.html" class="d-block"> <img
@@ -78,7 +83,7 @@
                                                             src="assets/images/products/paul1.png"
                                                             alt="" class="hover-img" />
                                                     </a>
-                                                    <a href="cart.html" class="addcart btn--primary style2"> Перейти
+                                                    <a href="{{ route('productCard') }}" class="addcart btn--primary style2"> Перейти
                                                         к товару </a>
                                                 </div>
 
@@ -88,7 +93,7 @@
                                                     <p>от 910 BYN</p>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> --}}
 
                                     </div>
                                 </div>

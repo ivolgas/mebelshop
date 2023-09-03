@@ -33,7 +33,7 @@
                             <div class="categories-one__thumb wow fadeInLeft animated"> <img
                                     src="assets/images/categories/single.png" alt="">
                                 <div class="text">
-                                    <h2><a href="{{ route('products') }}">{{ $category->name }}</a></h2>
+                                    <h2><a href="{{ route('products', ['category_id'=>$category->category_id]) }}">{{ $category->name }}</a></h2>
                                 </div>
                             </div>
                         </div>
