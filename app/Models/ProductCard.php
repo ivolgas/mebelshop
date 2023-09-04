@@ -14,10 +14,11 @@ class ProductCard extends Model
     public function getCategory(){
         return $this->belongsTo(Category::class, 'category_id');
     }
+    
 
     // public function getCategory()
     // {
-    //     $category = Category::find($this->category_id);
+    //     $category = ProductCard::find($this->category_id);
     //     dd($category);
     // }
 }

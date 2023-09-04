@@ -11,8 +11,8 @@ class CatalogController extends Controller
     // public function getCategory($category_id)
     // {
     //     $this->category_id = $category_id;
-    // }
-
+    // }       
+    
     public function catalog()
     {       
         $categories = Category::orderBy('id', 'ASC')->get();
