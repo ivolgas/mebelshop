@@ -3,7 +3,7 @@
 @section('content')
 
     <!--Start Breadcrumb Style2-->
-    <section class="breadcrumb-area" style="background-image: url(assets/images/shop/bg2.png);">
+    <section class="breadcrumb-area" style="background-image: url({{ asset('assets/images/shop/bg2.png') }});">
         <div class="container">
             <div class="row">
                 <div class="col-xl-12">
@@ -16,6 +16,16 @@
     </section>
     <!--End Breadcrumb Style2-->
 
+
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
+
+
+    @foreach ($productCards as $productCard)       
+    
     <!--Start Shop Details Breadcrumb-->
     <div class="shop-details-breadcrumb wow fadeInUp animated overflow-hidden ">
         <div class="container">
@@ -24,7 +34,7 @@
                     <div class="shop-details-inner">
                         <ul class="shop-details-menu">
                             <li><a href="index.html">Односпальные кровати</a></li>
-                            <li class="active">Модена</li>
+                            <li class="active">{{ $productCard->name }}</li>
                         </ul>
                     </div>
                 </div>
@@ -41,7 +51,8 @@
                 <div class="col-xl-9 col-lg-9 mt-30 wow fadeInUp animated ">
                     <div class="single-product-box two">
                         <div class="product-slicknav single-product-two-nav slider-nav">
-                            <div> <span class="single-item"> <img src="assets/images/product-cards/10modena.jpg" alt="">
+                            <div> <span class="single-item">
+                                <img src="{{ asset('assets/images/product-cards') }}/{{ $productCard->image }}" alt="">
                                 </span> </div>
                             <div> <span class="single-item"> <img src="assets/images/product-cards/10modena1.jpg" alt="">
                                 </span> </div>
@@ -51,7 +62,7 @@
                         <div class="big-product single-product-two slider-for">
                             <div>
                                 <div class="single-item">
-                                    <img src="assets/images/product-cards/10modena.jpg" alt="">
+                                    <img src="{{ asset('assets/images/product-cards') }}/{{ $productCard->image }}" alt="">
                                 </div>
                             </div>
                             <div>
@@ -71,10 +82,10 @@
                     <div class="shop-details-top-right two">
                         <div class="shop-details-top-right-content-box">
                             <div class="shop-details-top-title m-0">
-                                <h3>Модена</h3>
+                                <h3>{{ $productCard->name }}</h3>
                             </div>
                             <div class="shop-details-top-price-box d-flex align-items-center flex-wrap mt-30">
-                                <h3 class="pe-1"> от 890 BYN </h3>
+                                <h3 class="pe-1"> от {{ $productCard->price }} BYN </h3>
                             </div>
                             <div class="shop-details-top-color-sky-box mt-30">
                                 <h4>Цвет</h4>
@@ -96,8 +107,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="shop-details-top-cart-box-btn mt-30"> <button class="btn--primary style2 "
-                                    type="submit">Добавить в корзину</button> </div>
+                            <div class="shop-details-top-cart-box-btn mt-30"> 
+                                <a href="{{ route('addproduct.to.cart', $productCard->id) }}"><button class="btn--primary style2" type="submit">Добавить в корзину</button></a>
+                            </div>
                             <div class="shop-details-top-social-box mt-30">
                                 <p>Поделиться:</p>
                                 <ul class="ps-1 social_link d-flex align-items-center">
@@ -142,12 +154,7 @@
                         <div class="product-drescription">
                             <div class="blog-page-single wow fadeInUp animated">
                                 <div class="blog-page-content">
-                                    <p class="blog-page-text">
-                                        <span><strong>Цвет:</strong> большой выбор цветов на ваш вкус</span><br>
-                                        <span><strong>Материал:</strong> большой выбор материалов на ваш вкус</span><br>
-                                        <span><strong>Размеры и комплектация:</strong> определяются в ходе консультации</span><br>
-                                        <span><strong>Гарантия:</strong> 24 месяца</span>
-                                    </p>
+                                    <p class="blog-page-text">{{ $productCard->property }}</p>
                                 </div>
                             </div>
                         </div>
@@ -157,15 +164,7 @@
                         <div class="product-drescription">
                             <div class="blog-page-single fadeInUp animated">
                                 <div class="blog-page-content">
-                                    <p class="blog-page-text">Лаконичный и универсальный дизайн кровати Модена с
-                                        правильными
-                                        прямоугольными формами придаст спальне завершенный вид. Вертикальные строчки
-                                        с
-                                        углублением визуально делают изголовье выше, тем самым добавляя высоты
-                                        пространству
-                                        комнаты. Комплектуется вместительной системой хранения на безопасных и
-                                        прочных
-                                        газовых механизмах подъема.</p>
+                                    <p class="blog-page-text">{{ $productCard->description }}</p>
                                 </div>
                             </div>
                         </div>
@@ -175,5 +174,7 @@
         </div>
     </section>
     <!-- productdrescription-tab End -->
+
+    @endforeach   
     
 @endsection

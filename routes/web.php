@@ -30,5 +30,9 @@ Route::get('/products', [Controllers\ProductsController::class, 'products'])->na
 
 Route::get('/product_card', [Controllers\ProductCardController::class, 'productCard'])->name('productCard');
 
+Route::get('/product_card/{id}', [Controllers\ProductCardController::class, 'addProductToCart'])->name('addproduct.to.cart');
+
 // Route::get('/', [Controllers\SubscriberController::class, 'SubscribeIndex']);
 Route::post('dataInsert', [Controllers\SubscriberController::class, 'DataInsert']);
+
+Route::delete('/delete-cart-product', [Controllers\CartController::class, 'deleteProduct'])->name('delete.cart.product');

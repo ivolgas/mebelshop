@@ -10,8 +10,32 @@ class ProductCardController extends Controller
 {
     public function productCard()
     {
-        $productCard = ProductCard::orderBy('id', 'ASC')->get();
-        //dd($productCard);
-        return view('productCard', compact('productCard'));
+        // $productCard = ProductCard::orderBy('id', 'ASC')->get();
+        // //dd($productCard);
+        // return view('productCard', compact('productCard'));
+
+        $productCards = ProductCard::orderBy('id', 'ASC')->get();
+        //dd($productCards);
+        return view('productCard', compact('productCards'));
+    }
+
+    public function addProductToCart($id)
+    {
+        $productCard = ProductCard::findOrFail($id);
+        $cart = session()->get('cart', []);
+
+        if(isset($cart[$id])) {
+            $cart[$id]['quantity']++;
+        } else {
+            $cart[$id] = [
+                "name" => $productCard->name,
+                "quantity" => 1,
+                "price" => $productCard->price,
+                "image" => $productCard->image,
+            ];
+        }
+
+        session()->put('cart', $cart);
+        return redirect()->back();
     }
 }

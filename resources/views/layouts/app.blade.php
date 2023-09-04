@@ -17,20 +17,22 @@
         href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap"
         rel="stylesheet">
     <!-- FlatIcon Css -->
-    <link rel="stylesheet" href="assets/fonts/flaticon.css">
+    <link rel="stylesheet" href="{{asset('assets/fonts/flaticon.css')}}">
 
     <!-- Slick Slider Css -->
-    <link rel="stylesheet" href="assets/css/plugin/slick.css">
+    <link rel="stylesheet" href="{{asset('assets/css/plugin/slick.css')}}">
     <!--  Ui Tabs Css -->
-    <link rel="stylesheet" href="assets/css/plugin/jquery-ui.min.css">
+    <link rel="stylesheet" href="{{asset('assets/css/plugin/jquery-ui.min.css')}}">
     <!-- Magnific-popup Css -->
-    <link rel="stylesheet" href="assets/css/plugin/magnific-popup.css">
+    <link rel="stylesheet" href="{{asset('assets/css/plugin/magnific-popup.css')}}">
     <!-- Nice Select Css -->
-    <link rel="stylesheet" href="assets/css/plugin/nice-select.v1.0.css">
+    <link rel="stylesheet" href="{{asset('assets/css/plugin/nice-select.v1.0.css')}}">
     <!-- Animate Css -->
-    <link rel="stylesheet" href="assets/css/plugin/animate.css">
+    <link rel="stylesheet" href="{{asset('assets/css/plugin/animate.css')}}">
     <!-- Style Css -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
+    <!-- Script jQuery -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
 
 </head>
 
@@ -184,9 +186,11 @@
                             </nav>
                             <div class="right d-flex align-items-center justify-content-end">
                                 <ul class="main-menu__widge-box d-flex align-items-center ">
-                                    <li> <a href="{{ route('cart') }}" class="number cart-icon"> <i
-                                                class="flaticon-shopping-cart"></i><span class="count">(0)</span>
-                                        </a> </li>
+                                    <li> <a href="{{ route('cart') }}" class="number cart-icon"> 
+                                            <i class="flaticon-shopping-cart"></i>
+                                            <span class="count">{{ count((array) session('cart')) }}</span>
+                                        </a> 
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -323,6 +327,9 @@
 
     <!--==== Js Scripts Start ====-->
     <!-- Jquery v3.6.0 Js -->
+
+    @yield('scripts')
+
     <script src="assets/js/jqurey.v3.6.0.min.js"></script> <!-- Popper v2.9.3 Js -->
     <script src="assets/js/popper.v2.9.3.min.js"></script> <!-- Bootstrap v5.1.1 js -->
     <script src="assets/js/bootstrap.v5.1.1.min.js"></script> <!-- jquery ui js -->

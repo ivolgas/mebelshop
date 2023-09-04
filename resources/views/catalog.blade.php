@@ -3,7 +3,7 @@
 @section('content')
 
     <!--Start Breadcrumb Style2-->
-    <section class="breadcrumb-area" style="background-image: url(assets/images/shop/bg2.png);">
+    <section class="breadcrumb-area" style="background-image: url({{ asset('assets/images/shop/bg2.png') }});">
         <div class="container">
             <div class="row">
                 <div class="col-xl-12">
@@ -30,8 +30,8 @@
                         @foreach ($categories as $category)
 
                         <div class="col-sm-4 mt-30 col-8 text-center ">
-                            <div class="categories-one__thumb wow fadeInLeft animated"> <img
-                                    src="assets/images/categories/single.png" alt="">
+                            <div class="categories-one__thumb wow fadeInLeft animated"> 
+                                <img src="{{ asset('assets/images/categories') }}/{{ $category->image }}" alt="">
                                 <div class="text">
                                     <h2><a href="{{ route('products', ['category_id'=>$category->category_id]) }}">{{ $category->name }}</a></h2>
                                 </div>

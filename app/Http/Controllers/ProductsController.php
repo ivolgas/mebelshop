@@ -34,9 +34,9 @@ class ProductsController extends Controller
 
         // dd($category_id);
 
-        $getProducts = Category::find(1)->getProducts;
+        // $getProducts = Category::find(1)->getProducts;
 
-        dd($getProducts);
+        // dd($getProducts);
 
 
         // foreach ($getProducts as $getProduct) {
