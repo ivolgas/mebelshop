@@ -33,29 +33,14 @@
                             <div class="categories-one__thumb wow fadeInLeft animated"> 
                                 <img src="{{ asset('assets/images/categories') }}/{{ $category->image }}" alt="">
                                 <div class="text">
-                                    <h2><a href="{{ route('products', ['category_id'=>$category->category_id]) }}">{{ $category->name }}</a></h2>
+                                    {{-- <h2><a href="{{ route('products', ['category_id'=>$category->category_id]) }}">{{ $category->name }}</a></h2> --}}
+                                    <h2><a href="{{ asset('catalog/'.$category->id) }}">{{ $category->name }}</a></h2>
                                 </div>
                             </div>
                         </div>
                             
-                        @endforeach
+                        @endforeach                        
                         
-                        {{-- <div class="col-sm-4 mt-30 col-8 text-center ">
-                            <div class="categories-one__thumb wow fadeInRight animated"> <img
-                                    src="assets/images/categories/half.png" alt="">
-                                <div class="text">
-                                    <h2><a href="shop-grid.html">Полуторные</a></h2>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-4 mt-30 col-8 text-center ">
-                            <div class="categories-one__thumb wow fadeInRight animated"> <img
-                                    src="assets/images/categories/double.png" alt="">
-                                <div class="text">
-                                    <h2><a href="shop-grid.html">Двуспальные</a></h2>
-                                </div>
-                            </div>
-                        </div> --}}
                     </div>
                 </div>
             </div>

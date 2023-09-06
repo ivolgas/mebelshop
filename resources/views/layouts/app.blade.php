@@ -106,8 +106,8 @@
                     <div class="container">
                         <div class="row">
                             <div class="menu-info d-flex justify-content-between align-items-center">
-                                <div class="menubar"> <span></span> <span></span> <span></span> </div> <a
-                                    href="{{ route('aboutUs') }}" class="logo"> <img src="assets/images/logo/logo.svg" alt=""> </a>
+                                <div class="menubar"> <span></span> <span></span> <span></span> </div> 
+                                <a href="{{ route('aboutUs') }}" class="logo"> <img src="assets/images/logo/logo.svg" alt=""> </a>
                                 <div class="cart-holder">
                                     <a href="{{ route('cart') }}" class="cart cart-icon position-relative">
                                         <i class="flaticon-shopping-cart"></i>

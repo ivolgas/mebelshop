@@ -50,12 +50,8 @@
                                             <tr rowId="{{ $id }}">
                                                 <td data-th="Product">
                                                     <div class="thumb-box"> 
-                                                        <a href="#" class="thumb">
-                                                            <img src="{{ asset('assets/images/cart') }}/{{ $details['image'] }}" alt="">
-                                                        </a> 
-                                                        <a href="#" class="title">
-                                                            <h5> {{ $details['name'] }} </h5>
-                                                        </a> 
+                                                        <img class="thumb" src="{{ asset('assets/images/product-cards') }}/{{ $details['image'] }}" alt="">                                                        
+                                                        <h5 style="padding-left: 30px"> {{ $details['name'] }} </h5>
                                                     </div>
                                                 </td>
                                                 <td data-th="Price"> от {{ $details['price'] }} BYN </td>
@@ -111,7 +107,7 @@
                     <div class="col-lg-8 col-md-8 col-sm-8 wow fadeInUp animated">
                         <div class="newsLetter-popup__content mb-4 p-0">
                             <div class="text-center">
-                                <a href="index.html" class="logo">
+                                <a href="{{ route('aboutUs') }}" class="logo">
                                     <img src="assets/images/logo/logo.svg" alt="logo">
                                 </a>
                             </div>

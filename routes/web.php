@@ -22,13 +22,17 @@ Route::get('/cart', [Controllers\CartController::class, 'cart'])->name('cart');
 
 Route::get('/catalog', [Controllers\CatalogController::class, 'catalog'])->name('catalog');
 
+Route::get('/catalog/{category}', [Controllers\CatalogController::class, 'getOne'])->name('catalog_one');
+
 Route::get('/contacts', [Controllers\ContactsController::class, 'contacts'])->name('contacts');
 
 Route::get('/delivery', [Controllers\DeliveryController::class, 'delivery'])->name('delivery');
 
 Route::get('/products', [Controllers\ProductsController::class, 'products'])->name('products');
 
-Route::get('/product_card', [Controllers\ProductCardController::class, 'productCard'])->name('productCard');
+// Route::get('/product_card', [Controllers\ProductCardController::class, 'productCard'])->name('productCard');
+
+Route::get('/product/{id}', [Controllers\ProductCardController::class, 'productCard'])->name('productOne');
 
 Route::get('/product_card/{id}', [Controllers\ProductCardController::class, 'addProductToCart'])->name('addproduct.to.cart');
 

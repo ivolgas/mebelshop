@@ -18,4 +18,10 @@ class CatalogController extends Controller
         $categories = Category::orderBy('id', 'ASC')->get();
         return view('catalog', compact('categories'));
     }
+
+    public function getOne(Category $category)
+    {
+        //dd($category);
+        return view('catalog_one', compact('category'));
+    }
 }

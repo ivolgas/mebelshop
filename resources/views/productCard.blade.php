@@ -24,7 +24,7 @@
     @endif
 
 
-    @foreach ($productCards as $productCard)       
+    
     
     <!--Start Shop Details Breadcrumb-->
     <div class="shop-details-breadcrumb wow fadeInUp animated overflow-hidden ">
@@ -33,7 +33,7 @@
                 <div class="col-xl-12">
                     <div class="shop-details-inner">
                         <ul class="shop-details-menu">
-                            <li><a href="index.html">Односпальные кровати</a></li>
+                            <li><a href="{{ route('catalog') }}">Односпальные кровати</a></li>
                             <li class="active">{{ $productCard->name }}</li>
                         </ul>
                     </div>
@@ -52,27 +52,29 @@
                     <div class="single-product-box two">
                         <div class="product-slicknav single-product-two-nav slider-nav">
                             <div> <span class="single-item">
-                                <img src="{{ asset('assets/images/product-cards') }}/{{ $productCard->image }}" alt="">
+                                <img src="{{ asset('assets/images/product-cards') }}/{{ $productCard->image }}" alt=""/>
                                 </span> </div>
-                            <div> <span class="single-item"> <img src="assets/images/product-cards/10modena1.jpg" alt="">
+                            <div> <span class="single-item"> 
+                                <img src="{{ asset('assets/images/product-cards') }}/{{ $productCard->image_slider_1 }}" alt=""/>
                                 </span> </div>
-                            <div> <span class="single-item"> <img src="assets/images/product-cards/10modena2.jpg" alt="">
+                            <div> <span class="single-item"> 
+                                <img src="{{ asset('assets/images/product-cards') }}/{{ $productCard->image_slider_2 }}" alt=""/>
                                 </span> </div>
                         </div>
                         <div class="big-product single-product-two slider-for">
                             <div>
                                 <div class="single-item">
-                                    <img src="{{ asset('assets/images/product-cards') }}/{{ $productCard->image }}" alt="">
+                                    <img src="{{ asset('assets/images/product-cards') }}/{{ $productCard->image }}" alt=""/>
                                 </div>
                             </div>
                             <div>
                                 <div class="single-item">
-                                    <img src="assets/images/product-cards/10modena1.jpg" alt="">
+                                    <img src="{{ asset('assets/images/product-cards') }}/{{ $productCard->image_slider_1 }}" alt=""/>
                                 </div>
                             </div>
                             <div>
                                 <div class="single-item">
-                                    <img src="assets/images/product-cards/10modena2.jpg" alt="">
+                                    <img src="{{ asset('assets/images/product-cards') }}/{{ $productCard->image_slider_2 }}" alt=""/>
                                 </div>
                             </div>
                         </div>
@@ -100,15 +102,17 @@
                                 <h4>Количество</h4>
                                 <div class="product-quantity-box d-flex align-items-center flex-wrap">
                                     <div class="qty mr-2">
-                                        <div class="qtySelector text-center"> <span class="decreaseQty"><i
-                                                    class="flaticon-minus"></i> </span> <input type="text"
-                                                class="qtyValue" value="1" /> <span class="increaseQty"> <i
-                                                    class="flaticon-plus"></i> </span> </div>
+                                        <div class="qtySelector text-center"> 
+                                            <span class="decreaseQty"><i class="flaticon-minus"></i> </span> 
+                                            <input type="text" class="qtyValue" value="1" /> 
+                                            <span class="increaseQty"> <i class="flaticon-plus"></i> </span> 
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="shop-details-top-cart-box-btn mt-30"> 
-                                <a href="{{ route('addproduct.to.cart', $productCard->id) }}"><button class="btn--primary style2" type="submit">Добавить в корзину</button></a>
+                                {{-- <a href="{{ route('addproduct.to.cart', $productCard->id) }}"><button class="btn--primary style2" type="submit">Добавить в корзину</button></a> --}}
+                                <a href="{{ asset('product_card/'. $productCard->id) }}"><button class="btn--primary style2" type="submit">Добавить в корзину</button></a>
                             </div>
                             <div class="shop-details-top-social-box mt-30">
                                 <p>Поделиться:</p>
@@ -154,7 +158,7 @@
                         <div class="product-drescription">
                             <div class="blog-page-single wow fadeInUp animated">
                                 <div class="blog-page-content">
-                                    <p class="blog-page-text">{{ $productCard->property }}</p>
+                                    <p class="blog-page-text">{!! $productCard->property !!}</p>
                                 </div>
                             </div>
                         </div>
@@ -175,6 +179,6 @@
     </section>
     <!-- productdrescription-tab End -->
 
-    @endforeach   
+    
     
 @endsection
