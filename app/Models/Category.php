@@ -11,7 +11,7 @@ class Category extends Model
 
     public $fillable = ['name'];
 
-    public function products(){
+    public function getProducts(){
 
         return $this->hasMany(ProductCard::class);
 

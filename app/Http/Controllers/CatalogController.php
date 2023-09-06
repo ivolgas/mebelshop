@@ -19,9 +19,9 @@ class CatalogController extends Controller
         return view('catalog', compact('categories'));
     }
 
-    public function getOne(Category $category)
-    {
-        //dd($category);
-        return view('catalog_one', compact('category'));
-    }
+    // public function getCategory(Category $category)
+    // {
+    //     //dd($category);
+    //     return view('products', compact('category'));
+    // }
 }

@@ -33,7 +33,8 @@
                                             <div class="col-xl-4 col-lg-6 col-6 ">
                                             <div class="products-three-single w-100  mt-30">
                                                 <div class="products-three-single-img"> 
-                                                    <a href="{{ route('productCard') }}" class="d-block"> 
+                                                    {{-- <a href="{{ route('productCard') }}" class="d-block">  --}}
+                                                        <a href="{{ asset('product/'.$product->id) }}" class="d-block">
                                                         <img src="{{ asset('assets/images/products') }}/{{ $product->image_front_product }}" class="first-img" alt="" /> 
                                                         <img src="{{ asset('assets/images/products') }}/{{ $product->image_front_product }}" class="hover-img" alt="" />
                                                     </a>
@@ -43,7 +44,8 @@
 
                                                 <div class="products-three-single-content text-center">
                                                     <span>Кровать односпальная</span>
-                                                    <h5><a href="{{ route('productCard') }}"> {{ $product->name }} </a></h5>
+                                                    {{-- <h5><a href="{{ route('productCard') }}"> {{ $product->name }} </a></h5> --}}
+                                                    <h5><a href="{{ asset('product/'.$product->id) }}"> {{ $product->name }} </a></h5>
                                                     <p>от {{ $product->price }} BYN</p>
                                                 </div>
                                             </div>
