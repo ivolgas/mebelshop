@@ -19,10 +19,23 @@ class ProductCardController extends Controller
     //     return view('productCard', compact('productCards'));
     // }
 
-    public function productCard(ProductCard $productCard)
-    {                        
-        return view('productCard', compact('productCard'));
+    // public function productCard(ProductCard $productCard)
+    // {
+    //     return view('productCard', compact('productCard'));
+    // }
+
+    public function productCard($id)
+    {
+        $product = ProductCard::find($id);
+        
+
+        //$productCard = ProductCard::where('id', $product->id)->get();
+
+        //dd($productCard);
+
+        return view('productCard', compact('product'));
     }
+
 
     public function addProductToCart($id)
     {

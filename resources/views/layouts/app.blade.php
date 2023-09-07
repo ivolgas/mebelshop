@@ -9,9 +9,9 @@
     <!-- Title For This Document -->
     <title> SleepShop</title>
     <!-- Favicon For This Document -->
-    <link rel="shortcut icon" href="assets/images/logo/favicon-32x32.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="{{asset('assets/images/logo/favicon-32x32.svg')}}" type="image/x-icon">
     <!-- Bootstrap 5 Css -->
-    <link rel="stylesheet" href="assets/css/bootstrap.5.1.1.min.css">
+    <link rel="stylesheet" href="{{asset('assets/css/bootstrap.5.1.1.min.css')}}">
     <!-- Google fonts -->
     <link
         href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap"
@@ -107,7 +107,7 @@
                         <div class="row">
                             <div class="menu-info d-flex justify-content-between align-items-center">
                                 <div class="menubar"> <span></span> <span></span> <span></span> </div> 
-                                <a href="{{ route('aboutUs') }}" class="logo"> <img src="assets/images/logo/logo.svg" alt=""> </a>
+                                <a href="{{ route('aboutUs') }}" class="logo"> <img src="/assets/images/logo/logo.svg" alt=""> </a>
                                 <div class="cart-holder">
                                     <a href="{{ route('cart') }}" class="cart cart-icon position-relative">
                                         <i class="flaticon-shopping-cart"></i>
@@ -120,7 +120,7 @@
             </div>
             <div class="container position-relative d-lg-block d-none">
                 <div class="d-flex align-items-center justify-content-between"> <a href="{{ route('aboutUs') }}" class="logo me-2">
-                        <img src="assets/images/logo/logo.svg" alt=""> </a>
+                        <img src="/assets/images/logo/logo.svg" alt=""> </a>
                     <div class="mega-menu-default mega-menu d-lg-block d-none">
                         <div class="container ">
                             <div class="row d-flex align-items-center justify-content-between">
@@ -159,7 +159,7 @@
                 <div class="container auto-container position-relative">
                     <div class="row">
                         <div class=" d-flex align-items-center justify-content-between "> <a href="{{ route('aboutUs') }}"
-                                class="logo"> <img src="assets/images/logo/logo.svg" alt=""> </a>
+                                class="logo"> <img src="/assets/images/logo/logo.svg" alt=""> </a>
                             <nav>
                                 <ul class="page-dropdown-menu d-flex align-items-center justify-content-center">
                                     <li class="dropdown-list"> <a href="{{ route('aboutUs') }}"> <span>О нас</span> <span class="menuarrow">
@@ -256,7 +256,7 @@
                     <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 mt-30 wow fadeInUp animated">
                         <div class="footer-default__single-box">
                             <div class="company-info">
-                                <div class="footer-logo"> <a href="{{ route('aboutUs') }}"> <img src="assets/images/logo/logo.svg"
+                                <div class="footer-logo"> <a href="{{ route('aboutUs') }}"> <img src="/assets/images/logo/logo.svg"
                                             alt=""> </a> </div>
                                 <div class="text1">
                                     <p>Вы также можете найти нас в соцсетях и следить за последними обновлениями нашего
@@ -330,7 +330,25 @@
 
     @yield('scripts')
 
-    <script src="assets/js/jqurey.v3.6.0.min.js"></script> <!-- Popper v2.9.3 Js -->
+    <script src="{{asset('assets/js/jqurey.v3.6.0.min.js')}}"></script> <!-- Popper v2.9.3 Js -->
+    <script src="{{asset('assets/js/popper.v2.9.3.min.js')}}"></script> <!-- Bootstrap v5.1.1 js -->
+    <script src="{{asset('assets/js/bootstrap.v5.1.1.min.js')}}"></script> <!-- jquery ui js -->
+    <script src="{{asset('assets/js/plugin/jquery-ui.min.js')}}"></script> <!-- Parallax js -->
+    <script src="{{asset('assets/js/plugin/jarallax.min.js')}}"></script> <!-- Isotope js -->
+    <script src="{{asset('assets/js/plugin/isotope.js')}}"></script> <!-- Slick Slider Js -->
+    <script src="{{asset('assets/js/plugin/slick.min.js')}}"></script> <!-- magnific-popup v2.3.4 Js -->
+    <script src="{{asset('assets/js/plugin/jquery.magnific-popup.min.js')}}"></script> <!-- Tweenmax v2.3.4 Js -->
+    <script src="{{asset('assets/js/plugin/tweenMax.min.js')}}"></script> <!-- Nice Select Js -->
+    <script src="{{asset('assets/js/plugin/nice-select.v1.0.min.js')}}"></script> <!-- Wow js -->
+    <script src="{{asset('assets/js/plugin/wow.v1.3.0.min.js')}}"></script> <!-- Wow js -->
+    <script src="{{asset('assets/js/plugin/jquery.countdown.min.js')}}"></script> <!-- Main js -->
+    <script src="{{asset('assets/js/main.js')}}"></script>
+    <!--==== Js Scripts End ====-->
+
+
+
+
+    {{-- <script src="assets/js/jqurey.v3.6.0.min.js"></script> <!-- Popper v2.9.3 Js -->
     <script src="assets/js/popper.v2.9.3.min.js"></script> <!-- Bootstrap v5.1.1 js -->
     <script src="assets/js/bootstrap.v5.1.1.min.js"></script> <!-- jquery ui js -->
     <script src="assets/js/plugin/jquery-ui.min.js"></script> <!-- Parallax js -->
@@ -343,7 +361,11 @@
     <script src="assets/js/plugin/wow.v1.3.0.min.js"></script> <!-- Wow js -->
     <script src="assets/js/plugin/jquery.countdown.min.js"></script> <!-- Main js -->
     <script src="assets/js/main.js"></script>
-    <!--==== Js Scripts End ====-->
+    <!--==== Js Scripts End ====--> --}}
+
+
+
+
 </body>
 
 </html>

@@ -23,7 +23,7 @@ Route::get('/cart', [Controllers\CartController::class, 'cart'])->name('cart');
 Route::get('/catalog', [Controllers\CatalogController::class, 'catalog'])->name('catalog');
 
 
-Route::get('/catalog/{category}', [Controllers\ProductsController::class, 'getCategory'])->name('products');
+Route::get('/catalog/{category_id}', [Controllers\ProductsController::class, 'getCategory'])->name('products');
 
 
 Route::get('/contacts', [Controllers\ContactsController::class, 'contacts'])->name('contacts');

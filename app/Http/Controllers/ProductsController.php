@@ -9,11 +9,14 @@ use Illuminate\Http\Request;
 
 class ProductsController extends Controller
 {
-    public function getCategory(Category $category)
-    {
-        //dd($category);
+    public function getCategory($category_id)
+    {        
 
-        $products = ProductCard::where('category_id','=', $category->id)->get();
+        $category = Category::find($category_id);
+
+        //dd($category->id);
+
+        $products = ProductCard::where('category_id', $category->id)->get();
 
         //dd($products);
 

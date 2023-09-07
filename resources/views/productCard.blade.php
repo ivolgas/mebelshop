@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="breadcrumb-content text-center wow fadeInUp animated">
-                        <h2>Односпальные кровати</h2>
+                        <h2>Кровать {{ $product->name }}</h2>
                     </div>
                 </div>
             </div>
@@ -22,8 +22,6 @@
             {{ session('success') }}
         </div>
     @endif
-
-
     
     
     <!--Start Shop Details Breadcrumb-->
@@ -33,8 +31,9 @@
                 <div class="col-xl-12">
                     <div class="shop-details-inner">
                         <ul class="shop-details-menu">
-                            <li><a href="{{ route('catalog') }}">Односпальные кровати</a></li>
-                            <li class="active">{{ $productCard->name }}</li>
+                            <li><a href="{{ asset('catalog') }}"> Католог </a></li>
+                            <li><a href="{{ asset('catalog/'.$product->category_id) }}"> Кровать {{ $product->cat_name }} </a></li>
+                            <li class="active">{{ $product->name }}</li>
                         </ul>
                     </div>
                 </div>
@@ -47,34 +46,34 @@
 
     <section class="shop-details-top">
         <div class="container">
-            <div class="row mt--30">
+            <div class="row mt--60">
                 <div class="col-xl-9 col-lg-9 mt-30 wow fadeInUp animated ">
                     <div class="single-product-box two">
                         <div class="product-slicknav single-product-two-nav slider-nav">
                             <div> <span class="single-item">
-                                <img src="{{ asset('assets/images/product-cards') }}/{{ $productCard->image }}" alt=""/>
+                                <img src="{{ asset('assets/images/product-cards') }}/{{ $product->image }}" alt=""/>
                                 </span> </div>
                             <div> <span class="single-item"> 
-                                <img src="{{ asset('assets/images/product-cards') }}/{{ $productCard->image_slider_1 }}" alt=""/>
+                                <img src="{{ asset('assets/images/product-cards') }}/{{ $product->image_slider_1 }}" alt=""/>
                                 </span> </div>
                             <div> <span class="single-item"> 
-                                <img src="{{ asset('assets/images/product-cards') }}/{{ $productCard->image_slider_2 }}" alt=""/>
+                                <img src="{{ asset('assets/images/product-cards') }}/{{ $product->image_slider_2 }}" alt=""/>
                                 </span> </div>
                         </div>
                         <div class="big-product single-product-two slider-for">
                             <div>
                                 <div class="single-item">
-                                    <img src="{{ asset('assets/images/product-cards') }}/{{ $productCard->image }}" alt=""/>
+                                    <img src="{{ asset('assets/images/product-cards') }}/{{ $product->image }}" alt=""/>
                                 </div>
                             </div>
                             <div>
                                 <div class="single-item">
-                                    <img src="{{ asset('assets/images/product-cards') }}/{{ $productCard->image_slider_1 }}" alt=""/>
+                                    <img src="{{ asset('assets/images/product-cards') }}/{{ $product->image_slider_1 }}" alt=""/>
                                 </div>
                             </div>
                             <div>
                                 <div class="single-item">
-                                    <img src="{{ asset('assets/images/product-cards') }}/{{ $productCard->image_slider_2 }}" alt=""/>
+                                    <img src="{{ asset('assets/images/product-cards') }}/{{ $product->image_slider_2 }}" alt=""/>
                                 </div>
                             </div>
                         </div>
@@ -84,35 +83,22 @@
                     <div class="shop-details-top-right two">
                         <div class="shop-details-top-right-content-box">
                             <div class="shop-details-top-title m-0">
-                                <h3>{{ $productCard->name }}</h3>
+                                <h3>{{ $product->name }}</h3>
                             </div>
                             <div class="shop-details-top-price-box d-flex align-items-center flex-wrap mt-30">
-                                <h3 class="pe-1"> от {{ $productCard->price }} BYN </h3>
+                                <h3 class="pe-1"> от {{ $product->price }} BYN </h3>
                             </div>
                             <div class="shop-details-top-color-sky-box mt-30">
-                                <h4>Цвет</h4>
+                                <h4>Цвет модели</h4>
                                 <ul class="varients">
                                     <li> 
-                                        <img class="shop-details-top-color-sky-img" src="assets/images/colors/4829584.jpg" alt="">
+                                        <img class="shop-details-top-color-sky-img" src="{{ asset('assets/images/colors') }}/{{ $product->image_color }}" alt="">
                                     </li>
                                 </ul>
                             </div>
-
-                            <div class="product-quantity mt-30">
-                                <h4>Количество</h4>
-                                <div class="product-quantity-box d-flex align-items-center flex-wrap">
-                                    <div class="qty mr-2">
-                                        <div class="qtySelector text-center"> 
-                                            <span class="decreaseQty"><i class="flaticon-minus"></i> </span> 
-                                            <input type="text" class="qtyValue" value="1" /> 
-                                            <span class="increaseQty"> <i class="flaticon-plus"></i> </span> 
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="shop-details-top-cart-box-btn mt-30"> 
-                                {{-- <a href="{{ route('addproduct.to.cart', $productCard->id) }}"><button class="btn--primary style2" type="submit">Добавить в корзину</button></a> --}}
-                                <a href="{{ asset('product_card/'. $productCard->id) }}"><button class="btn--primary style2" type="submit">Добавить в корзину</button></a>
+                            
+                            <div class="shop-details-top-cart-box-btn mt-60"> 
+                                <a href="{{ asset('product_card/'. $product->id) }}"><button class="btn--primary style2" type="submit">Добавить в корзину</button></a>
                             </div>
                             <div class="shop-details-top-social-box mt-30">
                                 <p>Поделиться:</p>
@@ -158,7 +144,7 @@
                         <div class="product-drescription">
                             <div class="blog-page-single wow fadeInUp animated">
                                 <div class="blog-page-content">
-                                    <p class="blog-page-text">{!! $productCard->property !!}</p>
+                                    <p class="blog-page-text">{!! $product->property !!}</p>
                                 </div>
                             </div>
                         </div>
@@ -168,7 +154,7 @@
                         <div class="product-drescription">
                             <div class="blog-page-single fadeInUp animated">
                                 <div class="blog-page-content">
-                                    <p class="blog-page-text">{{ $productCard->description }}</p>
+                                    <p class="blog-page-text">{{ $product->description }}</p>
                                 </div>
                             </div>
                         </div>
