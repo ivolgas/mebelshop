@@ -8,30 +8,9 @@ use Illuminate\Http\Request;
 
 class ProductCardController extends Controller
 {
-    // public function productCard()
-    // {
-    //     // $productCard = ProductCard::orderBy('id', 'ASC')->get();
-    //     // //dd($productCard);
-    //     // return view('productCard', compact('productCard'));
-
-    //     $productCards = ProductCard::orderBy('id', 'ASC')->get();
-    //     //dd($productCards);
-    //     return view('productCard', compact('productCards'));
-    // }
-
-    // public function productCard(ProductCard $productCard)
-    // {
-    //     return view('productCard', compact('productCard'));
-    // }
-
     public function productCard($id)
     {
         $product = ProductCard::find($id);
-        
-
-        //$productCard = ProductCard::where('id', $product->id)->get();
-
-        //dd($productCard);
 
         return view('productCard', compact('product'));
     }
@@ -49,7 +28,7 @@ class ProductCardController extends Controller
                 "name" => $productCard->name,
                 "quantity" => 1,
                 "price" => $productCard->price,
-                "image" => $productCard->image,
+                "image" => $productCard->image,   
             ];
         }
 

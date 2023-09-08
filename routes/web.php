@@ -22,23 +22,16 @@ Route::get('/cart', [Controllers\CartController::class, 'cart'])->name('cart');
 
 Route::get('/catalog', [Controllers\CatalogController::class, 'catalog'])->name('catalog');
 
-
 Route::get('/catalog/{category_id}', [Controllers\ProductsController::class, 'getCategory'])->name('products');
-
 
 Route::get('/contacts', [Controllers\ContactsController::class, 'contacts'])->name('contacts');
 
 Route::get('/delivery', [Controllers\DeliveryController::class, 'delivery'])->name('delivery');
 
-// Route::get('/products', [Controllers\ProductsController::class, 'products'])->name('products');
-
 Route::get('/product/{id}', [Controllers\ProductCardController::class, 'productCard'])->name('productCard');
-
-//Route::get('/product/{id}', [Controllers\ProductCardController::class, 'productCard'])->name('productOne');
 
 Route::get('/product_card/{id}', [Controllers\ProductCardController::class, 'addProductToCart'])->name('addproduct.to.cart');
 
-// Route::get('/', [Controllers\SubscriberController::class, 'SubscribeIndex']);
 Route::post('dataInsert', [Controllers\SubscriberController::class, 'DataInsert']);
 
 Route::delete('/delete-cart-product', [Controllers\CartController::class, 'deleteProduct'])->name('delete.cart.product');
