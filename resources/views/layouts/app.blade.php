@@ -346,26 +346,6 @@
     <!--==== Js Scripts End ====-->
 
 
-
-
-    {{-- <script src="assets/js/jqurey.v3.6.0.min.js"></script> <!-- Popper v2.9.3 Js -->
-    <script src="assets/js/popper.v2.9.3.min.js"></script> <!-- Bootstrap v5.1.1 js -->
-    <script src="assets/js/bootstrap.v5.1.1.min.js"></script> <!-- jquery ui js -->
-    <script src="assets/js/plugin/jquery-ui.min.js"></script> <!-- Parallax js -->
-    <script src="assets/js/plugin/jarallax.min.js"></script> <!-- Isotope js -->
-    <script src="assets/js/plugin/isotope.js"></script> <!-- Slick Slider Js -->
-    <script src="assets/js/plugin/slick.min.js"></script> <!-- magnific-popup v2.3.4 Js -->
-    <script src="assets/js/plugin/jquery.magnific-popup.min.js"></script> <!-- Tweenmax v2.3.4 Js -->
-    <script src="assets/js/plugin/tweenMax.min.js"></script> <!-- Nice Select Js -->
-    <script src="assets/js/plugin/nice-select.v1.0.min.js"></script> <!-- Wow js -->
-    <script src="assets/js/plugin/wow.v1.3.0.min.js"></script> <!-- Wow js -->
-    <script src="assets/js/plugin/jquery.countdown.min.js"></script> <!-- Main js -->
-    <script src="assets/js/main.js"></script>
-    <!--==== Js Scripts End ====--> --}}
-
-
-
-
 </body>
 
 </html>

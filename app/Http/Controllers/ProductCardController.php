@@ -15,7 +15,6 @@ class ProductCardController extends Controller
         return view('productCard', compact('product'));
     }
 
-
     public function addProductToCart($id)
     {
         $productCard = ProductCard::findOrFail($id);
@@ -28,7 +27,7 @@ class ProductCardController extends Controller
                 "name" => $productCard->name,
                 "quantity" => 1,
                 "price" => $productCard->price,
-                "image" => $productCard->image,   
+                "image" => $productCard->image, 
             ];
         }
 

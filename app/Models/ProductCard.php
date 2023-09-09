@@ -12,6 +12,14 @@ class ProductCard extends Model
     public $fillable = ['id', 'name', 'price', 'property', 'description', 'cat_name', 'image', 'image_slider_1', 'image_slider_2', 'image_color', 'category_id'];
 
     public function getCategory(){
+
         return $this->belongsTo(Category::class, 'category_id');
+
+    }
+
+    public function purchase() {
+
+        return $this->belongsTo(Purchase::class, 'product_card_id');
+        
     }
 }

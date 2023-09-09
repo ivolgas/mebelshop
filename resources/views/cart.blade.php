@@ -25,86 +25,104 @@
         @endif
         
 
-        @if (session('cart'))
+            @if (session('cart'))
+
+            
+            {{-- <form method="post" action="addPurchase" enctype="multipart/form-data">
+            
+            @csrf --}}
 
 
-        <div class="container" style="width: 80%;">
-            <div class="row wow fadeInUp animated">
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-                    <div class="cart-table-box">
-                        <div class="table-outer d-flex justify-content-center">
-                            <table class="cart-table">
-                                <thead class="cart-header">
-                                    <tr>
-                                        <th>Товар</th>
-                                        <th>Кровать</th>
-                                        <th class="price">Стоимость</th> 
-                                        <th>Примечание</th>                     
-                                        <th class="hide-me"></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                                                        
-                                        @foreach (session('cart') as $id => $details) 
-                                           
-                                            <tr rowId="{{ $id }}">
-                                                <td data-th="Product">
-                                                    <div class="thumb-box"> 
-                                                        <img class="thumb" src="{{ asset('assets/images/product-cards') }}/{{ $details['image'] }}" alt="">  
-                                                    </div>
-                                                </td>
-                                                <td><h5 > Модель {{ $details['name'] }} </h5></td>
-                                                <td data-th="Price"> от {{ $details['price'] }} BYN </td>
-                                                <td><span>после оформления заказа наш <br>консультант свяжется с вами<br> в рабочие часы
-                                                    для уточнения <br>деталей заказа</span>
-                                                </td>                                                
-                                                <td class="actions">
-                                                    <a class="btn delete-product"><i class="flaticon-cross"></i></a>
-                                                </td>                                                
-                                            </tr>
-                                        
-                                         @endforeach                                        
-                                                                        
-                                </tbody>
-                            </table>
+            <div class="container" style="width: 80%;">
+                <div class="row wow fadeInUp animated">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                        <div class="cart-table-box">
+                            <div class="table-outer d-flex justify-content-center">
+                                <table class="cart-table">
+                                    <thead class="cart-header">
+                                        <tr>
+                                            <th>Товар</th>
+                                            <th>Кровать</th>
+                                            <th class="price">Стоимость</th> 
+                                            <th>Примечание</th>                     
+                                            <th class="hide-me"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                                                            
+                                            @foreach (session('cart') as $id => $details) 
+                                            
+                                                <tr class="form-group" data-id="{{ $id }}">
+                                                    <td data-th="Product">
+                                                        <div class="thumb-box"> 
+                                                            <img class="thumb" src="{{ asset('assets/images/product-cards') }}/{{ $details['image'] }}" alt="">  
+                                                        </div>
+                                                    </td>
+                                                    <td><h5 > Модель {{ $details['name'] }} </h5></td>
+                                                    <td data-th="Price"> от {{ $details['price'] }} BYN </td>
+                                                    <td><span>после оформления заказа наш <br>консультант свяжется с вами<br> в рабочие часы
+                                                        для уточнения <br>деталей заказа</span>
+                                                    </td>                                                
+                                                    <td class="actions">
+                                                        <a class="btn delete-product"><i class="flaticon-cross"></i></a>
+                                                    </td>                                                
+                                                </tr>
+                                            
+                                            @endforeach                                        
+                                                                            
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
 
-            <div class="row wow fadeInUp animated d-flex justify-content-center" style="padding: 0 12px">                
-                <div class="login-register-form p-0 mt-30">
-                    <p class="mb-4">Для получения обратной связи при оформлении заказа введите:</p>
-                    <div class="row d-flex">
-                        <div class="form-group mb-4"> 
-                            <input type="text" class="form-control" style="width: 40%" placeholder="Ваше имя">
+                <div class="row wow fadeInUp animated d-flex justify-content-center" style="padding: 0 12px">                
+                    <div class="login-register-form p-0 mt-30">
+                        <p class="mb-4">Для получения обратной связи, при оформлении заказа введите:</p>
+                        <div class="row d-flex">
+                            <div class="form-group mb-4"> 
+                                <input type="text" name="customer_name" class="form-control" style="width: 40%" placeholder="Ваше имя">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="customer_phone" class="form-control" style="width: 40%" placeholder="Номер телефона">
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" style="width: 40%" placeholder="Номер телефона">
-                        </div>
-                    </div>
-                    <p class="pt-30">* Нажимая кнопку "Заказать", Вы даёте согласие на обработку персональных данных</p>                                               
-                </div>
-            </div>
-
-
-            <div class="row">
-                <div class="col-xl-12">
-                    <div class="cart-button-box d-flex justify-content-end">
-                        <div class="cart-button-box-right wow fadeInUp animated"> 
-                            <a href="{{ route('catalog') }}">
-                                <button class="btn--primary style2 mt-30" type="submit">Продолжить покупки</button>
-                            </a>
-                            <button class="btn--primary style2 mt-30" type="submit">Заказать</button>
-                        </div>
+                        <p class="pt-30">* Нажимая кнопку "Заказать", Вы даёте согласие на обработку персональных данных</p>                                               
                     </div>
                 </div>
-            </div>
 
-        </div> 
-                                       
-        @endif          
+
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="cart-button-box d-flex justify-content-end">
+                            <div class="cart-button-box-right wow fadeInUp animated">
+
+                                <form method="post" action="/session"> 
+                                    
+                                    <a href="{{ route('catalog') }}">
+                                        <button class="btn--primary style2 mt-30" type="submit">Продолжить покупки</button>
+                                    </a>
+                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                    <button class="btn--primary style2 mt-30" type="submit" id="order-button">Заказать</button>
+                                    
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div> 
+
+
+            {{-- </form>  --}}
+                       
+                       
+            @endif 
+        
+       
         
 
     </section>
@@ -125,7 +143,7 @@
             method: "DELETE",
             data: {
                 _token: '{{ csrf_token() }}',
-                id: ele.parents("tr").attr("rowId")
+                id: ele.parents("tr").attr("data-id"),
             },
             success: function (response) {
                 window.location.reload();

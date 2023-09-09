@@ -35,3 +35,7 @@ Route::get('/product_card/{id}', [Controllers\ProductCardController::class, 'add
 Route::post('dataInsert', [Controllers\SubscriberController::class, 'DataInsert']);
 
 Route::delete('/delete-cart-product', [Controllers\CartController::class, 'deleteProduct'])->name('delete.cart.product');
+
+Route::post('/session', [Controllers\PurchaseController::class, 'session'])->name('session');
+
+//Route::post('/add_purchase', [Controllers\CartController::class, 'addPurchase']);
