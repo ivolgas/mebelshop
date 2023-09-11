@@ -66,6 +66,7 @@
                                 </div>
                                 <a href="{{ route('aboutUs') }}" class="international-shopping d-lg-block d-none ">Добро пожаловать в магазин
                                     SleepShop!</a>
+                                    {{-- Данный сайт является учебным проектом. Предоставленная на сайте информация является недействительной. Любые совпадения случайны. --}}
                                 <a href="{{ route('contacts') }}" class="international-shopping d-lg-block d-none ">+375 (44) 255-62-85</a>
                             </div>
                         </div>
