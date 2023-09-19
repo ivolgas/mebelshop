@@ -37,13 +37,13 @@
                             <h4>Наши контакты</h4>
                             <ul>
                                 <li>
-                                    <p>А1: <a href="tel:+375442556285">+375 (44) 255-62-85</a></p><br>
+                                    <p>А1: <a href="tel:+375442556285">+33753364989</a></p><br>
                                 </li>
                                 <li>
-                                    <p>МТС: <a href="tel:+375332556285">+375 (33) 255-62-85</a></p><br>
+                                    <p>МТС: <a href="tel:+375332556285">+33753364989</a></p><br>
                                 </li>
                                 <li>
-                                    <p>E-mail: <a href="mailto:sleepshop@gmail.com">sleepshop@gmail.com</a></p>
+                                    <p>E-mail: <a href="mailto:sleepshop@gmail.com">sleepshop@sleepshop.by</a></p>
                                     <br><br>
                                 </li>
                             </ul>
